@@ -1,0 +1,139 @@
+# Introduction
+
+\label{ch:intro}
+
+Can an embedded controller designed for use in large commercial HVAC 
+units (NXP i.MX 8M Plus) power useful AI/ML inference and prediction
+algorithms on the edge within acceptable time and resource limits? 
+Is this control board, as currently designed, a feasible option for 
+running AI and ML algorithms in its current state, or should another 
+edge analytics platform design be explored? 
+
+Imagine a scenario where a large commercial HVAC company lauches its
+next gereration controller (Grpyhon for short). This controller has
+a modern interface with a high resolution screen, and sophisticated
+algorithms used for cooling and heating large commercial buildings.
+
+This Gryphon controller has a System on Module (SOM) embedded
+architecture integrated within this full scale custom controller.  
+It is the modern embedded system device capable of controlling
+cooling and heating on a large scale.
+
+Quickly after this new controller is developed, ChatGPT and large
+language models of AI is introduced and explodes on the scene
+rapidly. Everyone begins to use AI and ML on a regular basis
+following this introduction.
+
+In this scenario, the fictional chief executive of said company
+desires to become a part of this AI boom and asks a basic question.  
+Seeing that there is a hardware develpment happening in a relatively
+short timeframe from this AI boom, there are thoughts around making
+them work together.
+
+This thesis explores an important question: With all the problem solving
+that artificial intelligence and machine learing is able to do,
+is the current iMX8M Plus SOM controller board sufficient for this use,
+or is a hardware upgrade necessary considering its limited processing
+power, memory, and design for small embedded systems?
+
+This feasibility study of the controller to run AI and ML algorithms 
+would evaluate whether this device can meet certain time and 
+completion restraints to provide for learning, infrernce, and 
+prediction with varied small, nominal, and large datasets representing 
+years worth of runtime data. 
+
+The impact of AI on society in 2026 cannot be overstated --- nearly
+everyone in the country has heard of it but less than three years
+ago it was hardly a household name. This technological tidal wave is
+washing over industry and moving very quickly. The impact is directly
+observable by users of consumer search engines, people in tech jobs,
+and computer users in general. 
+
+Less obvious is how AI has crept into embedded systems where the
+computer's role is behind-the-scenes. This means many industries, 
+such as HVAC manufacturers and servicing, have to be nimble to
+accommodate and adapt. This is especially challenging because control 
+boards and in-house developed embeddedsystems have long development 
+cycles. This thesis considers one specific platform and the 
+feasibility hosting AI capabilities on an existing HVAC control 
+system in production now.
+
+There has been a shift in architecture as the industry is moving 
+from centralized, cloud-only AI to a hybrid approach where "smarter" 
+local compute is used for rapid, real-time decisions, leaving heavy 
+training in the cloud.
+
+There have been hardware advancements. The rise of specialized 
+hardware accelerators—such as MCUs with built-in neural network
+engines—enables sophisticated models to run on battery-powered
+sensors.
+
+Some key drivers shoudl be considered.  The main reasons for moving 
+inference to the edge include reducing network traffic, maintaining 
+high data privacy, and providing instantaneous responses for 
+applications; like with HVAC units in specific cooling spaces
+
+By building a proper runtime environment using Yocto and added
+recipes examining how the board handles tasks, uses energy, and
+connects with AI tools, this study aims to find out if the iMX8M
+Plus is a suitable option for using AI in places where computing
+resources are scarce, and whether it can perform well enough
+compared to stronger computers.
+
+The study plans to experiment with a few different scenarios for
+testing including using a Linear Regression model with Gradient
+Descent curves both using the IMX board and comparing that timing
+output with a laptop computer. The AI runtimes are a critical measure
+of the suitibility of the sytem in general.
+
+The IMX8M Plus board also comes with a GPU. Future work can include
+performing experiments to see the timing, CPU, Energy, Memory usage
+when using the GPU and also without using build in GPU.
+
+To answer this thesis question, the research will use a
+step-by-step method by adapting simple AI tools to work on the
+iMX8M Plus board, using its main processors to speed up predictions.
+The plan involves testing how well AI models perform by measuring
+things like execution speed, and comparing these results to
+how the same models run on stronger computers, like laptop, and
+for future work, graphics cards.
+
+The first point in helping to answer this question will be to
+determine if the programs used in our Intro to ML class can
+actually run on the target embedded system. Initially the
+board is developed using a version of Ubuntu linux built
+with Yocto recipes but python is not natively installed as
+a recipy on the board.
+
+The second point will be to determin how effectively can
+a sample of assignment problems from an Intro to ML class
+taken at UNCC graduate level can run on both the target device
+as well as a standard laptop. There are a few projects and
+assignments that may help to answer this question.
+
+Several specific tests will be done: first,
+using linear regression with gradient descent to train a model
+and verify its output using supervision, second computing cost
+functions using variables and Theta changes, third Predictive
+models using both Training and Test data, Clasisification
+problems with predictions and accuracy scoring.
+
+The third point will be to also include diffferent sizes of
+datasets to better simlate real world sizes of data rather
+than just the nominal sizes from the Intro To ML class.
+Changing certain parameters will also be testing to vary
+the size and speed the model will perform teh algorithms
+to see if t's possible to teach small AI networks right on
+the board.
+
+The fourth point will be to run an different model
+altogether and determine if this is feasible task. The
+MicroGPT algoritm was chosen for this effort. Using the
+MicroGPT model, a python script based largly on
+ChatGPT without any outside depnendncies, can simulate
+runnging on an air gapped system as long as an input
+file is provided.
+
+These tests along with changes in parameters and inputs
+will provide real-world proof to show if the iMX8M Plus can
+handle useful AI applications on small devices.
